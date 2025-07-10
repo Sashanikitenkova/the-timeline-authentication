@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+
+body {
+  font-family: 'Noto Serif', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #f4e5f4;
+  color: #333;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 12px 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  font-family: 'Noto Serif', serif;
+}
+
+.timeline {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #333333;
+  user-select: none;
+}
+
+.login-logout {
+  font-size: 1rem;
+  color: rgb(228, 118, 204);
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1.5px solid transparent;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.login-logout:hover {
+  background-color: rgb(228, 118, 204);
+  color: white;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 20px;
+  color:  #717171;
+  margin-bottom: 30px;
+}
+
+.post-card {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.post-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  color: #1a1a1a;
+}
+
+.see-more {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 14px;
+  color: rgb(228, 118, 204);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.see-more:hover {
+  color: rgb(198, 95, 179);
+  text-decoration: underline;
+}
+
+.post-date {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #888;
+}
+
+.post-message {
+  font-size: 20px;
+  color: #717171;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 7px 22px;
+  background-color: rgb(228, 118, 204);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.post-edit-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.post-edit-input {
+  flex: 1;
+  padding: 10px 15px;
+  font-size: 20px;
+  border: 1.5px solid #d9b8da;
+  border-radius: 6px;
+  font-family: 'Noto Serif', serif;
+  transition: border-color 0.3s ease;
+}
+
+.post-edit-input:focus {
+  outline: none;
+  border-color: rgb(228, 118, 204);
+  box-shadow: 0 0 5px rgb(228, 118, 204);
+}
+
+.post-edit-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: rgb(228, 118, 204);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.post-edit-button:hover {
+  background-color: rgb(198, 95, 179);
+}
+
+.btn-group {
+  text-align: right;
+  margin-top: 15px;
+}
+
+.btn-group .btn {
+  margin-left: 10px;
+}
+
+.edit-form {
+  margin-top: 20px;
+}
+
+.post-textarea {
+  width: 100%;
+  padding: 15px;
+  font-family: 'Noto Serif', serif;
+  font-size: 16px;
+  border: 1.5px solid #d7c7b9; 
+  border-radius: 8px;
+  resize: vertical;
+  box-sizing: border-box;
+  background-color: #f9f5f0; 
+  color: #5a4a42; 
+  transition: border-color 0.3s ease;
+}
+
+.post-textarea:focus {
+  outline: none;
+  border-color: rgb(228, 118, 204); /* рожевий акцент */
+  background-color: #fff;
+}
+
+.submit-btn {
+  margin-top: 15px;
+  background-color: rgb(228, 118, 204);
+  padding: 10px 25px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: rgb(198, 95, 179);
+}
+
+.error-box {
+  background-color: #f8d7da;  
+  color: #721c24;            
+  padding: 10px 15px;
+  border: 1px solid #f5c6cb; 
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.comments-wrapper {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.comment-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.comment-input {
+  flex: 1;
+  padding: 8px 12px;
+  font-family: 'Noto Serif', serif;
+  font-size: 14px;
+  border: 1.5px solid #d9b8da;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: rgb(228, 118, 204);
+  box-shadow: 0 0 5px rgb(228, 118, 204);
+}
+
+.comment-submit {
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: rgb(228, 118, 204);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-submit:hover {
+  background-color: rgb(198, 95, 179);
+}
+
+.comments-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.comment {
+  background-color: #fafafa;
+  border-left: 4px solid rgb(228, 118, 204);
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #717171;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment p {
+  margin: 0;
+  flex: 1;
+}
+
+.delete-link {
+  margin-left: 15px;
+  font-size: 13px;
+  color: #5b1460;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.delete-link:hover {
+  color: #bf26b8;
+}
+
+.container-forms {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.signup-login-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  background-color: #ffe6f0;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.login,
+.signup {
+  flex: 1 1 45%;
+}
+
+.login-form,
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-input,
+.signup-input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.login-button,
+.signup-button {
+  padding: 12px;
+  background-color: rgb(228, 118, 204);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover,
+.signup-button:hover {
+  background-color: rgb(198, 95, 179);
+}
+
+.form-result {
+  margin-top: 10px;
+  color: #9f6ac7;
+  font-weight: 500;
+  text-align: center;
+}
+
+.form-error {
+  text-align: center;
+  color: red;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .signup-login-container {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .login,
+  .signup {
+    flex: 1 1 100%;
+  }
+}

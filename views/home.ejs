@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+    <header class="header-container">
+            <h2 class="timeline">Timeline</h2>
+            <a class="login-logout" href="/user/signup-login">Login</a>
+    </header>
+    <div class="container">
+        <% if (errorMessage) { %>
+            <div class="error-box"><%= errorMessage %></div>
+        <% } %>
+
+        <h2 class="page-title">All Posts</h2>
+        <% if (posts.length > 0) { %>
+            <% posts.forEach(item => { %>
+                <div class="post-card">
+                    <p class="post-date"><%= item.author?.firstName || 'Unknown'%> - <%= new Date(item.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) %></p>
+                    <p class="post-message"><%= item.post %></p>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>There are no posts to display...</p>
+        <% } %>
+    </div>
+    
+</body>
+</html>

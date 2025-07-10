@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+<body>
+     <header class="header-container">
+            <h2 class="timeline">Timeline</h2>
+            <a class="login-logout" href="/logout">Logout</a>
+    </header>
+
+    <div class="container">
+        <% if (errorMessage) { %>
+            <div class="error-box"><%= errorMessage %></div>
+        <% } %>
+        <h2>Welkome <%= username%></h2>
+        <form class="post-edit-form" action="/add-new-post" method="POST">
+            <input class="post-edit-input" name="post" type="text", placeholder="Post a message" />
+            <button class="post-edit-button">Post</button>
+        </form>
+        <h2 class="page-title">All Posts</h2>
+        <% if (posts.length > 0) { %>
+            <% posts.forEach(item => { %>
+                <div class="post-card">
+                    <% if(item.author._id.toString() === userId.toString()) { %>
+                        <a href="/post/<%= item._id %>" class="see-more">See more</a>
+                   <% } %>
+                    <p class="post-date"><%= item.author?.firstName || 'Unknown'%> - <%= new Date(item.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) %></p>
+                    <p class="post-message"><%= item.post %></p>
+
+                    <div class="comments-wrapper">
+                        <form class="comment-form" action="/post/add/new-comment/<%= item._id %>" method="POST">
+                            <input class="comment-input" name="body" type="text" placeholder="comment..." autocomplete="off" />
+                            <button class="comment-submit">Add comment</button>
+                        </form>
+                        <div class="comments-container">
+                            <% if(item.comments.length > 0) { %>
+                                <% item.comments.forEach( comment => { %>
+                                    <div class="comment">
+                                        <p><%= comment.author?.firstName || 'Unknown'%></p>
+                                        <p><%= comment.body %></p>
+                                        <% if (comment.author && comment.author._id.toString() === userId.toString()) { %>
+                                            <a class="delete-link" href="/delete/post/comment/<%= comment._id %>/<%= item._id %>" class="">Delete</a>
+                                        <% } %>
+                                    </div>
+                                <% }) %>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>There are no posts to display...</p>
+        <% } %>
+    </div>
+    
+</body>
+</html>

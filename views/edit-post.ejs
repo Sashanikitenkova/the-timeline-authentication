@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+  <div class="container">
+    <h4 class="page-title">Edit a Post</h4>
+     <% if (errorMessage) { %>
+            <div class="error-box"><%= errorMessage %></div>
+    <% } %>
+    <form class="edit-form" action="/edit-post-form/<%= post._id %>" method="POST">
+      <div class="post-card">
+        <textarea class="post-textarea" name="post" rows="6" cols="50"><%= post.post %></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

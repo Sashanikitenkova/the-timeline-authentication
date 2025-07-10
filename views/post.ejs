@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+  <div class="container">
+    <h4 class="page-title">Full Post</h4>
+        <div class="post-card">
+            <p class="post-date"><%= new Date(post.createdAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) %></p>
+            <p class="post-message"><%= post.post %></p>
+        </div>
+        <div class="btn-group">
+            <a href="/delete/post/<%= post._id %>" class="btn">Delete</a>
+            <a href="/update/post/<%= post._id %>" class="btn">Edit Post</a>
+        </div>
+  </div>
+</body>
+</html>
